@@ -135,6 +135,12 @@ class ConventionalCommitsCz(BaseCommitizen):
             },
             {
                 "type": "confirm",
+                "message": "Is this a Pre-Release ? ",
+                "name": "is_prerelease_change",
+                "default": False,
+            },
+            {
+                "type": "confirm",
                 "message": "Is this a BREAKING CHANGE? Correlates with MAJOR in SemVer",
                 "name": "is_breaking_change",
                 "default": False,
@@ -157,6 +163,7 @@ class ConventionalCommitsCz(BaseCommitizen):
         body = answers["body"]
         footer = answers["footer"]
         is_breaking_change = answers["is_breaking_change"]
+        is_prerelease_change = answers["is_prerelease_change"]
 
         if scope:
             scope = f"({scope})"
@@ -164,6 +171,8 @@ class ConventionalCommitsCz(BaseCommitizen):
             body = f"\n\n{body}"
         if is_breaking_change:
             footer = f"BREAKING CHANGE: {footer}"
+        if is_prerelease_change:
+            footer = f"pre-release {footer}"
         if footer:
             footer = f"\n\n{footer}"
 
