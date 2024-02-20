@@ -1,4 +1,23 @@
 
+## v3.15.0 (2024-02-17)
+
+### Feat
+
+- **bump**: functionality to add build-metadata to version string
+
+## v3.14.1 (2024-02-04)
+
+### Fix
+
+- **bump**: remove unused method
+- **scm**: only search tags that are reachable by the current commit
+
+## v3.14.0 (2024-02-01)
+
+### Feat
+
+- properly bump versions between prereleases (#799)
+
 ## v3.13.0 (2023-12-03)
 
 ### Feat

@@ -1,5 +1,5 @@
 [tool.commitizen]
-version = "3.13.0"
+version = "3.15.0"
 tag_format = "v$version"
 version_files = [
   "pyproject.toml:version",
@@ -9,7 +9,7 @@ version_files = [
 
 [tool.poetry]
 name = "commitizen"
-version = "3.13.0"
+version = "3.15.0"
 description = "Python commitizen client tool"
 authors = ["Santiago Fraire <santiwilly@gmail.com>"]
 license = "MIT"
@@ -29,6 +29,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 
@@ -52,16 +53,16 @@ importlib_metadata = { version = ">=4.13,<8"}
 # dev tool
 ipython = "^8.0"
 # test
-pytest = "^7.2.0"
+pytest = ">=7.2,<9.0"
 pytest-cov = "^4.0"
 pytest-mock = "^3.10"
 pytest-regressions = "^2.4.0"
 pytest-freezer = "^0.4.6"
 pytest-xdist = "^3.1.0"
 # code formatter
-black = "~=23.11"
+black = ">=23.11,<25.0"
 # linter
-ruff = "~=0.1.6"
+ruff = ">=0.1.6,<0.3.0"
 pre-commit = ">=2.18,<4.0"
 mypy = "^1.4"
 types-PyYAML = ">=5.4.3,<7.0.0"
@@ -140,6 +141,8 @@ addopts = "--strict-markers"
 
 [tool.ruff]
 line-length = 88
+
+[tool.ruff.lint]
 select = ["E", "F", "UP"]
 ignore = [
     "E501",
@@ -147,10 +150,10 @@ ignore = [
     "D415"
 ]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["commitizen", "tests"]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.mypy]
