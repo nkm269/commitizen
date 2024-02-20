@@ -172,7 +172,7 @@ class ConventionalCommitsCz(BaseCommitizen):
         if is_breaking_change:
             footer = f"BREAKING CHANGE: {footer}"
         if is_prerelease_change:
-            prerelease = f"pre-release {footer}"
+            prerelease = " pre-release "
         if footer:
             footer = f"\n\n{footer}"
 
