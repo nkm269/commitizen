@@ -118,6 +118,12 @@ class ConventionalCommitsCz(BaseCommitizen):
                 "filter": parse_scope,
             },
             {
+                "type": "confirm",
+                "message": "Is this a Pre-Release ? ",
+                "name": "is_prerelease_change",
+                "default": False,
+            },
+            {
                 "type": "input",
                 "name": "subject",
                 "filter": parse_subject,
@@ -132,12 +138,6 @@ class ConventionalCommitsCz(BaseCommitizen):
                     "Provide additional contextual information about the code changes: (press [enter] to skip)\n"
                 ),
                 "filter": multiple_line_breaker,
-            },
-            {
-                "type": "confirm",
-                "message": "Is this a Pre-Release ? ",
-                "name": "is_prerelease_change",
-                "default": False,
             },
             {
                 "type": "confirm",
