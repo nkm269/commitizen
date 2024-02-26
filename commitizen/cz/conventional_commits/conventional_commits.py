@@ -164,7 +164,7 @@ class ConventionalCommitsCz(BaseCommitizen):
         footer = answers["footer"]
         is_breaking_change = answers["is_breaking_change"]
         is_prerelease_change = answers["is_prerelease_change"]
-
+        prerelease = ""
         if scope:
             scope = f"({scope})"
         if body:
